@@ -9,20 +9,24 @@
 </head>
 <body>
     <header>
-        <h1>ohmyfood</h1>
+        <div class="header-container">
+            <i class="fas fa-arrow-left"></i>
+            <h1 class="shrikhand">ohmyfood</h1>
+        </div>
     </header>
     <main>
-        <section>
-            <img src="ressources\img\restaurants\jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût photo restaurant">
+        <section class="sec-thumbnail">
+            <img src="ressources\img\restaurants\jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="thumbnail" alt="La palette du goût photo restaurant">
         </section>
-        <section>
-            <section>
-                <h2>La palette du goût</h2>
-                <button>
+        <section class="sec-menu">
+            <section class="sec-menu__header">
+                <h2 class="shrikhand">La palette du goût</h2>
+                <div>
                     <i class="far fa-heart"></i>
-                </button>
+                    <i class="fas fa-heart"></i>
+                </div>
             </section>
-            <section>
+            <section class="sec-menu__main">
                 <section>
                     <h3>ENTRÉES</h3>
                     <a href="#">
@@ -114,7 +118,7 @@
                     </a>
                 </section>
             </section>
-            <section>
+            <section class="sec-menu__footer">
                 <button>
                     Commander
                 </button>
@@ -122,10 +126,10 @@
         </section>
     </main>
     <footer>
-        <ul>
-            <h4>ohmyfood</h4>
-            <li>Proposer un restaurant</li>
-            <li>Devenir partenaire</li>
+        <ul class="footer-list">
+            <h4 class="shrikhand">ohmyfood</h4>
+            <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+            <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
             <li>Mentions légales</li>
             <li>Concact</li>
         </ul>
