@@ -1,0 +1,19 @@
+header{
+    @include shadow(.1);
+    padding: .5rem 0;
+    position: relative;
+}
+h1{
+    font-size: 1.9rem;
+    color: black;
+    text-align: center;
+}
+/*---LA-PALETTE-DU-GOUT---*/
+.header-container{
+    display: flex;
+    align-items: center;
+    @include centered90();
+    .fa-arrow-retour{
+        margin: 0 4rem 0 0;
+    }
+}

@@ -1,0 +1,7 @@
+@mixin centered90 {
+    width: 90%;
+    margin: 0 auto;
+}
+@mixin shadow($opacity) {
+    box-shadow: rgba(0,0,0,$opacity) 0rem 0.2rem 0.5rem 0rem;
+}
