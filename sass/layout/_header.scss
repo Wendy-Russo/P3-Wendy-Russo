@@ -11,9 +11,11 @@ h1{
 /*---LA-PALETTE-DU-GOUT---*/
 .header-container{
     display: flex;
+    justify-content: center;
     align-items: center;
     @include centered90();
     .fa-arrow-retour{
-        margin: 0 4rem 0 0;
+        position: absolute;
+        left: 2rem;
     }
 }

@@ -21,4 +21,44 @@ footer{
         font-size: 1rem;
         margin: 0 1rem 0 0;
     }
+}/*---COMMANDER/FOOTER---*/
+.sec-menu__footer{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    .purple-button{
+        padding: 1rem 3rem;
+    }
+}
+/*---MEDIA QUERIES---*/
+@media (min-width:768px){
+    .footer-list{
+        .footer-title{
+            width: 100%;
+        }
+        li{
+            width: 40%;
+        }
+
+    }
+}
+@media (min-width:1024px){
+    .footer-list{
+        height: 80px;
+        .footer-title{
+            width: 100%;
+        }
+        li{
+            width: 25%;
+        }
+
+    }
+}
+@media (min-width:1440px){
+    .footer-list{
+        li{
+            width: 20%;
+        }
+
+    }
 }
