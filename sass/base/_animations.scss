@@ -1,0 +1,31 @@
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeup{
+    0%{
+        opacity: 0;
+        transform: translate(0,1rem);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes fadeout{
+      0% { opacity: 1;
+        pointer-events:all;}
+      90% { opacity: 1;
+        pointer-events:all;}
+      100% {opacity: 0;
+        pointer-events:none}
+  }

@@ -10,6 +10,29 @@
 @import "./base/typography";
 /*---BASE---*/
 @import "./base/base";
+/*---ANIMS---*/
+@import "./base/animations";
+/*---LOADER---*/
+.loader {
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation:fadeout 3s ;
+    animation-fill-mode: both;
+    div{
+        width: 250px;
+        height: 250px;
+        margin: auto auto;
+        background-color: white;
+        box-shadow:inset 0rem -.5em .0rem .5rem $primary;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+    }
+
+  }
 /*---PLACE---*/
 .sec-place{
     background-color:#eaeaea ;
@@ -55,8 +78,14 @@
     color: white;
     border: none;
     border-radius: 2rem;
-    background: linear-gradient(0deg,$primary 0%, $secondary 100%);
+    background-image: linear-gradient(0deg,$primary 0%, $secondary 100%);
     padding: 1rem 1.5rem;
+    transition:box-shadow .25s, filter .25s;
+
+}
+.purple-button:hover{
+    filter: brightness(1.1);
+    @include shadow(.6);
 }
 /*---FONCTIONNEMENT---*/
 .sec-fonction{
@@ -175,19 +204,23 @@ i{
     font-size: 1.5rem;
 }
 .fas.fa-heart{
-    color: rgba(255, 255, 255, 0);
+    color: #9c47fc;
+    opacity: 0;
+    transition:opacity .25s;
 }
 .far{
+    color: rgb(0, 0, 0);
+    transition:color .25s;
     position: relative;
     left: 1.5rem;
     z-index: 1;
-    color: rgb(0, 0, 0);
 }
 .far:hover{
     color: rgba(0,0,0,0);
+
 }
 .far:hover+.fas{
-    color: #9c47fc;
+    opacity: 1;
     background: -webkit-linear-gradient($primary, $secondary);
     background-clip: text;
     -webkit-background-clip: text;
@@ -209,6 +242,7 @@ i{
     align-items: center;
 }
 /*---Menu---*/
+
 .sec-menu{
     position: relative;
     z-index: 1;
@@ -219,6 +253,7 @@ i{
     &__header{
         display: flex;
         @include centered90();
+        animation:fade 1s;
     }
     &__main{
         @include centered90();
@@ -226,6 +261,7 @@ i{
     }
     &__footer{
         @include centered90();
+        animation:fade 1s;
     }
 }
 .menu-titre{
@@ -238,44 +274,74 @@ i{
     margin: 1.5rem 0;
 }
 /*---CARTES---*/
+
+.entrees{
+    animation:fadeup .5s;
+}
+.plats{
+    animation:fadeup .5s;
+    animation-fill-mode:both;
+    animation-delay: .125s;
+
+}
+.desserts{
+    animation:fadeup .5s;
+    animation-fill-mode:both;
+    animation-delay: .25s;
+}
 .menu-item{
     @include shadow(.1);
     display: flex;
     background-color: white;
+    justify-content: space-between;
     border-radius: 1rem;
     margin: 1rem 0;
     height: 75px;
+
     &__content{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition:.25s;
         padding: 0 1rem;
-        width: 100%;
+        width: 90%;
         height: 100%;
     }
     &__check{
-        height: 100%;
-        width: 0%;
-        background-color: $tertiary;
-    }
-    .fa-check-circle{
-        font-size: 0rem;
-    }
-}
-.menu-item:hover{
-    justify-content: space-around;
-    .menu-item__content{
-        padding: 0 1rem;
-    }
-    .menu-item__check{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 25%;
-        border-radius: 0 1rem 1rem 0;
+        height: 100%;
+        width: 0%;
+        transition:.5s;
+        background-color: $tertiary;
+
     }
     .fa-check-circle{
+        font-size: 1.5rem;
         color: white;
+        opacity: 0;
+        font-size: 0rem;
+        transition:.5s;
+
+    }
+}
+
+
+
+.menu-item:hover{
+    justify-content: space-between;
+    .menu-item__content{
+        padding: 0 1rem;
+        width: 75%;
+    }
+    .menu-item__check{
+        width: 5rem;
+        border-radius: 0 1rem 1rem 0;
+
+    }
+    .fa-check-circle{
+        opacity: 1;
         font-size: 1.5rem;
     }
 }
@@ -284,9 +350,17 @@ i{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    overflow:hidden;
+
+    p,h4{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 .menu-prix{
     font-weight: bold;
+        margin: 0 0 0 0.5rem;
 }
 
 /*------MEDIAQUERIES------*/
@@ -369,11 +443,20 @@ i{
     }
 }
 @media (min-width:1024px){
+    .sec-menu__main{
+        display: flex;
+        justify-content: space-between;
+    }
     .sec-item-container{
+        width: 32%;
         justify-content: space-around;
         h3{
             margin: 2rem 0 .5rem .5rem;
             width: 100%;
         }
+    }
+    .menu-item{
+        margin: .5rem 0;
+        width: 100%;
     }
 }
